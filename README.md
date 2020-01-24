@@ -20,3 +20,6 @@ The Class ReferenceVal includes the following:
 The class Checksum includes the following:
 - Calculate Modulo97 Checksums (used in IBAN, SCOR, ISO11649:2009, SEPA Creditor References)
 - Calculate Modulo 10 Recursive (used in ISR/ESR/QRR references and Swiss PostFinance account numbers).
+
+Although this library doesn't create any QR code. There are already really good open source implementations available for that.
+So this library is for the curious programmers who search some solutions and know-how for their payments related code.
