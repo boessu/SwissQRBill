@@ -7,11 +7,11 @@ Several validations useful for Swiss QR Bill. This implementation has two target
 Beside of that it also includes general useful source code examples for the following checks in the package ch.braincell.pay.val. It seems to be rather hard to get these examples in the Net... so I separated them in these classes. Hopefully this is a useful place for people who'll search for these algorithms.
 
 The class AccountVal includes the following:
-- validating IBAN formal (according to ISO 13616-1:2007, part 1) including the check of the checksum.
-- format a IBAN to a String for the official, visual representation of an IBAN.
-- validating a Swiss PostFinance account to be formal valid (checksum calculation)
+- validating an IBAN formally (according to ISO 13616-1:2007, part 1), including the check of the checksum.
+- format an IBAN to a String for the official, visual representation of an IBAN.
+- validating a Swiss PostFinance account to be formally valid (checksum calculation)
 - format a Swiss PostFinance account number to the official visual form with '-'.
-- format a Swiss PostFinance account number to the official digital 9 digits form (e.g. for the coding lines).
+- format a Swiss PostFinance account number to the official digital 9 digits form (e.g. for the coding lines on the payment slips).
 
 The Class ReferenceVal includes the following:
 - Check Creditor References according to ISO11649:2009 (SCOR, SEPA)
