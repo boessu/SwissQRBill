@@ -84,8 +84,8 @@ public class QRRContent {
 	public static final class Address {
 		/**
 		 * Mandatory.<br/>
-		 * �S� - structured address<br/>
-		 * �K� - combined address
+		 * S - structured address<br/>
+		 * K - combined address
 		 */
 		public static final String TYPE = "^(S|K){1}$";
 		/** Mandatory. */
