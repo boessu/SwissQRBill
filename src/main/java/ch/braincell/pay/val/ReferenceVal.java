@@ -24,7 +24,7 @@ public class ReferenceVal {
 	/**
 	 * Checks the RF Creditor Reference syntax and calculates the Modulo 97 checksum
 	 * if it is an RF Creditor Reference. The checksum is directly after the code
-	 * "RF" in the position 3 & 4 of the reference.
+	 * "RF" in the position 3 &amp; 4 of the reference.
 	 * 
 	 * @param SCOR RF Creditor Reference according to ISO 11649:2009
 	 * @return checksum (2 digits) if it is a valid SCOR reference, -1 if it is not
@@ -73,7 +73,7 @@ public class ReferenceVal {
 	 * Checks the QRR Reference syntax and calculates the Modulo 10 checksum if it is
 	 * an QR Reference.
 	 * 
-	 * @param QRR Reference without checksum (!)
+	 * @param reference Reference without checksum (!)
 	 * @return checksum (1 digit) if it is a valid QRR reference, -1 if it is not
 	 *         a QRR in syntax.
 	 */
@@ -88,7 +88,7 @@ public class ReferenceVal {
 	/**
 	 * Tests if the Checksum of a QR Reference is valid or not.
 	 * 
-	 * @param QR Reference.
+	 * @param reference Reference with checksum.
 	 * @return true if it is a valid QR Reference and the checksum is correct, false
 	 *         otherwise.
 	 */

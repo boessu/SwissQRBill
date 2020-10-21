@@ -100,8 +100,7 @@ public class AccountVal {
 
 	/**
 	 * Checks the IBAN syntax and calculates the Modulo 97 checksum if it is an
-	 * IBAN. The checksum is directly after the country code in the position 3 & 4
-	 * of an IBAN.
+	 * IBAN. The checksum is directly after the country code in the position 3 &amp; 4
 	 * 
 	 * @param IBAN an IBAN in the IBAN syntax (ISO 13616-1:2007, part 1).
 	 * @return The Modulo 97 checksum of the IBAN, if it is an IBAN. Returns -1 if

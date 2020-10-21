@@ -77,18 +77,18 @@ public class QRRContent {
 	public static final String IBAN_CHLI = "(CH|LI){1}[0-9]{7}[A-Z0-9]{12}";
 
 	/**
-	 * Address<br/>
-	 * Creditor: Mandatory<br/>
-	 * Ultimate Creditor: at the moment not allowed.<br/>
+	 * Address<br>
+	 * Creditor: Mandatory<br>
+	 * Ultimate Creditor: at the moment not allowed.<br>
 	 * Ultimate Debtor: Optional. If it is not in the code, a blank field should be
-	 * there for a hand written address.<br/>
+	 * there for a hand written address.<br>
 	 * 
 	 * @author Boessu
 	 */
 	public static final class Address {
 		/**
-		 * Mandatory.<br/>
-		 * S - structured address<br/>
+		 * Mandatory.<br>
+		 * S - structured address<br>
 		 * K - combined address
 		 */
 		public static final String TYPE = "^(S|K){1}$";
@@ -133,9 +133,9 @@ public class QRRContent {
 
 	/**
 	 * This is the remittance block. Please note that the fields
-	 * {@link #UNSTRUCTURED} + {@link #STRUCT_BOOK_INFO} should be max 140 chars in
-	 * size.<br/>
-	 * Note that {@link #STRUCT_BOOK_INFO} is not part of the Remittance block (as
+	 * {@link #UNSTRUCTURED} + {@link BillInformation#STRUCT_BOOK_INFO} should be max 140 chars in
+	 * size.<br>
+	 * Note that {@link BillInformation#STRUCT_BOOK_INFO} is not part of the Remittance block (as
 	 * you see here) and won't be forwarded to the Creditor along with the payment.
 	 * 
 	 * @author Boessu
@@ -143,11 +143,11 @@ public class QRRContent {
 	 */
 	public static final class Remittance {
 		/**
-		 * Mandatory.<br/>
-		 * 
-		 * @param QRR  numeric {@link ReferenceVal#REF_QRR QR-Reference}.<br/>
-		 * @param SCOR alphanumeric {@link ReferenceVal#REF_SCOR SCOR Reference}.<br/>
-		 * @param NON  no refernce at all.
+		 * Mandatory.<br>
+		 * <br>
+		 * QRR  numeric {@link ReferenceVal#REF_QRR QR-Reference}.<br>
+		 * SCOR alphanumeric {@link ReferenceVal#REF_SCOR SCOR Reference}.<br>
+		 * NON  no refernce at all.
 		 */
 		public static final String REF_TYPE = "QRR|SCOR|NON"; // Mandatory
 		/** That would be finally a QRR reference line sequence. */
@@ -168,11 +168,11 @@ public class QRRContent {
 	 * This block is information about the bill itself. It is not part of the
 	 * Payment and will only visible by the (Ultimate) Debtor in special
 	 * circumstances. Usually even the (Ultimate) Debtor won't see this information
-	 * if he scanned the QR bill directly within his banking app.<br/>
+	 * if he scanned the QR bill directly within his banking app.<br>
 	 * Since it is not part of the payment, you won't see it in the account
 	 * statements of the banks and the data won't be forwarded with the payment to
 	 * the Creditor! So it's more or less "invisble" for most payment actors in the
-	 * payment chain.<br/>
+	 * payment chain.<br>
 	 * The whole block is optional.
 	 * 
 	 * @author Boessu
@@ -184,11 +184,11 @@ public class QRRContent {
 		 * automated booking of the payment on the (Ultimate) Debtor's general ledger.
 		 * Beside of that, the structure is not part of the QRR standard. SIX will
 		 * maintain possible structures outside of the QRR specification. One
-		 * possibility of structure is the recommendation of Swico.<br/>
+		 * possibility of structure is the recommendation of Swico.<br>
 		 * According to the specification you have to enter a blank line here if you
 		 * don't use it (see definition of "Optional"). Anyhow all examples of SIX don't
 		 * have an empty line after the {@link QRRContent#TRAILER} if there is no
-		 * {@link #STRUCT_BOOK_INFO} data. That means their QR examples aren't according
+		 * {@link BillInformation#STRUCT_BOOK_INFO} data. That means their QR examples aren't according
 		 * to their own specification (strictly speaking). If you would like to be sure
 		 * not getting into troubles, keep it according to the specification (you do it
 		 * for your customers who like to get automated payment slips without the risk
@@ -198,13 +198,13 @@ public class QRRContent {
 
 		/**
 		 * Additional. Alternative scheme parameters. This is not part of the Payment
-		 * and will only visible by the (Ultimate) Debtor.<br/>
+		 * and will only visible by the (Ultimate) Debtor.<br>
 		 * The first characters define the alternate scheme name, until a separator
 		 * character appears. However, the separator is part of the scheme definition
 		 * and so it can be any character. There is only a guess it could be a "/", but
-		 * it could be something different (defined by the scheme owner).<br/>
+		 * it could be something different (defined by the scheme owner).<br>
 		 * The possible schemes is not part of the QRR standard. SIX will maintain
-		 * possible schemes outside of the QRR specification.</br>
+		 * possible schemes outside of the QRR specification.<br>
 		 * This part is basically optional, but you should not put empty lines instead
 		 * if you don't use this part (see definition of "Additional" in the
 		 * specification).
