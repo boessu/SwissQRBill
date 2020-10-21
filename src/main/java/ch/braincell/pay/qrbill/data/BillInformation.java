@@ -55,7 +55,7 @@ public class BillInformation {
 	@Override
 	public String toString() {
 		if (bookingInfo.isEmpty() && alternateParam.isEmpty())
-			return "";
+			return "\n"; // empty line for Optional booking information.
 
 		String result = "";
 		if (!bookingInfo.isEmpty())
