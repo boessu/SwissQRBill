@@ -63,7 +63,11 @@ public class QRRContent {
 	public static final class Header {
 		/** Mandatory. Identifies the QRR standard. */
 		public static final String QR_TYPE = "SPC";
-		/** Mandatory. Version of the QRR standard. */
+		/**
+		 * Mandatory. Version of the QRR standard. Even there is a actual specification
+		 * 2.1, this part hasn't been changed in the actual specification (it's still
+		 * '0200'). Most bank observe this value strictly to '0200'. So be careful!
+		 */
 		public static final String VERSION = "0200";
 		/** Mandatory. Used character encoding. Actually only "1" (for UTF-8) allowed */
 		public static final String CODING = "1"; // Mandatory
@@ -94,9 +98,9 @@ public class QRRContent {
 		public static final String STREET = LATIN_CHARS + "{0,70}";
 		/** Optional. Only structured address. */
 		public static final String BUILDING_NUMBER = LATIN_CHARS + "{0,16}";
-		/** Optional. Only structured address. */
+		/** Dependent. Only structured address, but then Mandatory! */
 		public static final String POSTAL_CODE = LATIN_CHARS + "{0,16}";
-		/** Optional. Only structured address. */
+		/** Dependent. Only structured address, but then Mandatory! */
 		public static final String TOWN = LATIN_CHARS + "{0,35}";
 		/** Optional. Only combined address. */
 		public static final String ADDRESS_LINE = LATIN_CHARS + "{0,70}";
@@ -181,19 +185,30 @@ public class QRRContent {
 		 * Beside of that, the structure is not part of the QRR standard. SIX will
 		 * maintain possible structures outside of the QRR specification. One
 		 * possibility of structure is the recommendation of Swico.<br/>
+		 * According to the specification you have to enter a blank line here if you
+		 * don't use it (see definition of "Optional"). Anyhow all examples of SIX don't
+		 * have an empty line after the {@link QRRContent#TRAILER} if there is no
+		 * {@link #STRUCT_BOOK_INFO} data. That means their QR examples aren't according
+		 * to their own specification (strictly speaking). If you would like to be sure
+		 * not getting into troubles, keep it according to the specification (you do it
+		 * for your customers who like to get automated payment slips without the risk
+		 * for getting additional manual operating fees).
 		 */
 		public static final String STRUCT_BOOK_INFO = LATIN_CHARS + "{0,140}"; // Optional
 
 		/**
-		 * Optional. Alternative scheme parameters. This is not part of the Payment and
-		 * will only visible by the (Ultimate) Debtor.<br/>
+		 * Additional. Alternative scheme parameters. This is not part of the Payment
+		 * and will only visible by the (Ultimate) Debtor.<br/>
 		 * The first characters define the alternate scheme name, until a separator
 		 * character appears. However, the separator is part of the scheme definition
 		 * and so it can be any character. There is only a guess it could be a "/", but
 		 * it could be something different (defined by the scheme owner).<br/>
 		 * The possible schemes is not part of the QRR standard. SIX will maintain
-		 * possible schemes outside of the QRR specification.
+		 * possible schemes outside of the QRR specification.</br>
+		 * This part is basically optional, but you should not put empty lines instead
+		 * if you don't use this part (see definition of "Additional" in the
+		 * specification).
 		 */
-		public static final String ALTERNATE_PARAMETERS = LATIN_CHARS + "{0,100}"; // Optional, up to 2 times
+		public static final String ALTERNATE_PARAMETERS = LATIN_CHARS + "{0,100}"; // Additional, up to 2 times
 	}
 }
