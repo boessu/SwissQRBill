@@ -23,3 +23,11 @@ The class Checksum includes the following:
 
 Although this library doesn't create any QR code. There are already really good open source implementations available for that.
 So this library is for the curious programmers who search some solutions and know-how for their payments related code.
+
+## Some things to keep an eye on in the the wild life of QR-bill payment slips
+- **Keep the Error Correction Level to "M".** Yes, I know: most banks do accept Error Correction Level "H" too... as long as they can scan it with their scanner resolution. The minimal scanning and archiving level requirements of payment slips is 200 dpi and B/W. If you push the Error Correction Level to "H", you'll run into payment slips which won't be recognized by paper scanning processes if there is a bit more data in it (happens as soon as Ultimate Creditor will be enabled). And, just as a note, printers and their drivers could get into their bleeding edges too with 997 characters, the specified physical size of the QR code on a OR bill and Error Correction Level "H". So keep it to "M" and you (and your customers) don't get into troubles.
+- **Use CR/LF or LF according to the implementation guide.** CR (only) payment data can run into troubles. Not all banks can accept that on all of their channels. Even if they do accept it on one channel (e.g. e-banking), you can't be sure they'll accept it on all other channels too. I know, the FAQ on https://www.paymentstandards.ch/ tells you a different story than the Implementation Guide. But in case of doubt the Implementation Guide overrules the FAQ (trust me).
+- **Don't snip the borders of the QR code while printing.** If you loose parts of the three Position Markers, it won't be recognized by most scanners (e.g. https://zxing.org/). While the rest has a good protection against such problems, the Position Markers identify the QR code borders itself and are very important. That's also the reason why they've a eye-catching bigger size compared to the Alignment Markers and Data Points.
+- **use UTF-8 for the data and use only allowed characters according to the Implementation Guildeline.** Very important. Banks *do* reject payments if there are not allowed characters in it due to compliance reasons.
+
+Don't kill the messenger, please.
