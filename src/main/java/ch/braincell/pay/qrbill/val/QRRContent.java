@@ -33,9 +33,9 @@ public class QRRContent {
 	public static final int MAX_LINES = 34;
 
 	/** The coding is UTF-8 but only latin chars are allowed. */
-	public static final String LATIN_CHARS = "([a-zA-Z0-9\\.,;:'\\+\\-/\\(\\)?\\*\\[\\]\\{\\}\\\\`´~ ]|[!&quot;#%&amp;&lt;&gt;÷=@_$£]|[àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÑ])";
+	public static final String LATIN_CHARS = "([a-zA-Z0-9\\.,;:'\\+\\-/\\(\\)?\\*\\[\\]\\{\\}\\\\`´~ ]|[!&\"'<>#%÷=@_$£]|[àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÑ])";
 	/** Helper Regex to filter all non-latin chars. */
-	public static final String NON_LATIN_CHARS = "([^a-zA-Z0-9\\.,;:'\\+\\-/\\(\\)?\\*\\[\\]\\{\\}\\\\`´~ ]|[^!&quot;#%&amp;&lt;&gt;÷=@_$£]|[^àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÑ])";
+	public static final String NON_LATIN_CHARS = "([^a-zA-Z0-9\\.,;:'\\+\\-/\\(\\)?\\*\\[\\]\\{\\}\\\\`´~ ]|[^!&\"'<>#%÷=@_$£]|[^àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÑ])";
 
 	/**
 	 * Helper method to replace all non-latin characters with a ".". According to
