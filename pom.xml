@@ -5,7 +5,7 @@
 
 	<groupId>ch.braincell.pay</groupId>
 	<artifactId>qrr-validate</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<!-- Output to jar format -->
 	<packaging>jar</packaging>
