@@ -1,6 +1,7 @@
 # Swiss QRbill validate
 
-Several validations useful for Swiss QR Bill. This implementation has two targets:
+Several validations useful for Swiss QR Bill. The only paper based payment slip method left in Switzerland (for local payments) after the fade out of IS nd ISR payment slips since 30th September 2022.
+This implementation has two targets:
 - Should be useful for quality checks of own implementations.
 - Should be readable and understandable code for learning.
 
