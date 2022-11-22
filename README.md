@@ -1,3 +1,5 @@
+[![Maven Central](http://img.shields.io/maven-central/v/io.github.boessu/qrr-validate)](https://search.maven.org/search?q=g:io.github.boessu%20AND%20a:qrr-validate)
+
 # Swiss QRbill validate
 
 Several validations useful for Swiss QR Bill. The only paper based payment slip method left in Switzerland (for local payments) after the fade out of IS nd ISR payment slips since 30th September 2022.
