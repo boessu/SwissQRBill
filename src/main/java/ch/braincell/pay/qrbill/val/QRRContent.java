@@ -82,16 +82,20 @@ public class QRRContent {
 	 * Ultimate Creditor: at the moment not allowed.<br>
 	 * Ultimate Debtor: Optional. If it is not in the code, a blank field should be
 	 * there for a hand written address.<br>
-	 * 
+	 * Beginning with IG SPS 2.3 (valid 21. Nov. 2025), there is only structured address
+	 * (Type "S") allowed. However, several banks will continue to support combined 
+	 * addresses (Type "K") until the unstructured addresses aren't allowed anymore in
+	 * the SIC network (20. Nov. 2026) or they convert it for you to a structured address
+	 * (end date according to debtor bank).
 	 * @author Boessu
 	 */
 	public static final class Address {
 		/**
 		 * Mandatory.<br>
 		 * S - structured address<br>
-		 * K - combined address
+		 * K - combined address was removed in SPS 2.3
 		 */
-		public static final String TYPE = "^(S|K){1}$";
+		public static final String TYPE = "^(S){1}$";
 		/** Mandatory. */
 		public static final String NAME = LATIN_CHARS + "{0,70}";
 		/** Optional. Only structured address. */
@@ -212,4 +216,5 @@ public class QRRContent {
 		public static final String ALTERNATE_PARAMETERS = LATIN_CHARS + "{0,100}"; // Additional, up to 2 times
 	}
 }
+
 
