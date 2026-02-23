@@ -3,10 +3,10 @@
 
 	<groupId>io.github.boessu</groupId>
 	<artifactId>qrr-validate</artifactId>
-	<version>1.0.1</version>
-	<name>Swiss QR payment slip validate library</name>
+	<version>1.0.2</version>
+	<name>Swiss QR payment slip validate library (V2.3)</name>
 	<url>https://github.com/boessu/SwissQRBill</url>
-	<description>Several validations useful for Swiss QR Bill. The only paper based payment slip method left in Switzerland (for local payments) after the fade out of IS nd ISR payment slips since 30th September 2022. </description>
+	<description>Several validations useful for Swiss QR Bill. The only paper based payment slip method left in Switzerland (for local payments) after the fade out of IS nd ISR payment slips since 30th September 2022.</description>
 	<scm>
 		<url>https://github.com/boessu/SwissQRBill</url>
 		<connection>https://github.com/boessu/SwissQRBill.git</connection>
@@ -127,3 +127,4 @@
 		</dependency>
 	</dependencies>
 </project>
+
